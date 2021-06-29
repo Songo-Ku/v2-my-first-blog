@@ -10,13 +10,12 @@
             <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
             <p>{{ post.text|linebreaksbr }}</p>
 
+
 <!--  sekcja z komentarzami do postu -->
             <a href="{% url 'post_detail' pk=post.pk %}">Comments all: {{ post.comments.count }}</a>
 
             <a href="{% url 'post_detail' pk=post.pk %}">Comments approved: {{ post.approved_comments.count }}</a>
 <!--  koniec sekcja z komentarzami do postu -->
-
-
         </article>
     {% endfor %}
 

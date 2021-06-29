@@ -1,6 +1,7 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
+
     <article class="post">
         <aside class="actions">
             {% if post.published_date %}
@@ -26,11 +27,9 @@
             {% endif %}
 
         </aside>
-
         <h2>{{ post.title }}</h2>
         <p>{{ post.text|linebreaksbr }}</p>
     </article>
-
             <!--  tutaj zaczyna sie sekcja z komentarzami  -->
         <a class="btn btn-default" href="{% url 'add_comment_to_post' pk=post.pk %}">Add comment</a>   
          
@@ -53,4 +52,5 @@
             <p>No comments here yet :(</p>
         {% endfor %}
         <!--  tutaj kończy sie sekcja z komentarzami  -->
+
 {% endblock %}
